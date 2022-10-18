@@ -8,6 +8,7 @@
 		<module>order-service</module>
 		<module>eureka-server</module>
         <module>notification-service</module>
+        <module>user-service</module>
     </modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -25,6 +26,7 @@
 		<springframework.version>2.5.7</springframework.version>
 		<spring.cloud-version>2021.0.4</spring.cloud-version>
 		<spring.kafka.version>2.9.1</spring.kafka.version>
+		<spring-security.version>5.7.3</spring-security.version>
 	</properties>
 
 	<dependencyManagement>
@@ -47,6 +49,17 @@
 				<artifactId>spring-kafka</artifactId>
 				<version>${spring.kafka.version}</version>
 			</dependency>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-devtools</artifactId>
+				<scope>runtime</scope>
+				<optional>true</optional>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-configuration-processor</artifactId>
+				<optional>true</optional>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
@@ -59,6 +72,19 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-oauth2-resource-server</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.auth0</groupId>
+			<artifactId>java-jwt</artifactId>
+			<version>3.19.2</version>
 		</dependency>
 	</dependencies>
 
